@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "web-app"
+version = "0.1.0"
+description = "basic web application"
+authors = ["Matajur <126118653+Matajur@users.noreply.github.com>"]
+license = "Apache License 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+websockets = "^12.0"
+motor = "^3.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

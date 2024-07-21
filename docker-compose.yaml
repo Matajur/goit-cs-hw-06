@@ -1,0 +1,24 @@
+services:
+
+  web_app:
+    build: .  # Dockerfile is in the same folder with .yaml
+    ports:
+      - "3000:3000" # host port : docker port
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/web_app
+    env_file:
+      - .env
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $[DB_USER]
+      MONGO_INITDB_ROOT_PASSWORD: $[DB_PASS]
+      MONGO_INITDB_DATABASE: $[DB_NAME]
+    volumes:
+      - ./storage:/data/db # host 'storage' directory on should be mounted to /data/db inside the MongoDB container
+      
