@@ -20,5 +20,10 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: $[DB_PASS]
       MONGO_INITDB_DATABASE: $[DB_NAME]
     volumes:
-      - ./storage:/data/db # host 'storage' directory on should be mounted to /data/db inside the MongoDB container
+      - ./storage:/data/db # 'storage' directory on host PC should be mounted to /data/db inside the MongoDB container
+
+volumes:
+  mongo_data:
+
+# docker-compose up --build
       

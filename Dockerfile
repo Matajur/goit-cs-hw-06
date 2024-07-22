@@ -16,7 +16,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Port where the application is running inside the container
-EXPOSE 8000
+EXPOSE 3000
 
 # Running an application inside a container
 ENTRYPOINT ["python", "main.py"]
